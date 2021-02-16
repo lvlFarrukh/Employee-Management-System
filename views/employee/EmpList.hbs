@@ -1,0 +1,41 @@
+<div style="margin-bottom: 20px">
+    <a href="/employee">
+        <button type="submit" class="btn btn-secondary" style="color: white">
+            <i class="fa fa-plus"></i>
+            Add
+        </button>
+    </a>
+    <h3 style="display: contents;">{{viewTitle}}</h3>
+</div>
+
+<table class="table caption-top">
+  <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Number</th>
+            <th scope="col">Actions</th>
+        </tr>
+  </thead>
+  <tbody>
+        {{#each list}}            
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.designation}}</td>
+                <td>{{this.number}}</td>
+                <td>
+                    <a style="text-decoration: none; color: black" href="/employee/list/edit/{{this._id}}">
+                        <i style="margin-left: 10px;cursor: pointer" class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <a style="text-decoration: none; color: black" href="/employee/list/delete/{{this._id}}">
+                        <i style="margin-left: 10px;color: red;cursor: pointer" class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        {{/each}}
+  </tbody>
+</table>

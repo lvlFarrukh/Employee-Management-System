@@ -1,37 +1,45 @@
 <h3>{{viewTitle}}</h3>
 
-<form>
+<form action="/employee" method="POST">
+    <input type="text" name="_id" value="{{employee._id}}" style="display: none";>
     <div class="form-group" style="margin-top: 30px;">
         <label>Full Name</label>
-        <input type="text" class="form-control" name="fullName" placeholder="Fullname">
+        <input type="text" class="form-control" value="{{employee.fullName}}" name="fullName" placeholder="Fullname" required>
     </div>
     <div class="form-group" style="margin-top: 20px;">
         <label>Email</label>
-        <input type="text" class="form-control" name="email" placeholder="Email">
+        <input type="email" class="form-control" value="{{employee.email}}"" name="email" placeholder="Email" required>
     </div>
     <div class="row">
         <div class="form-group col-md-6" style="margin-top: 20px;">
             <label>Number</label>
-            <input type="text" class="form-control" name="number" placeholder="Number">
+            <input type="number" class="form-control" value="{{employee.number}}" name="number" placeholder="Number" required>
         </div>
         <div class="form-group col-md-6" style="margin-top: 20px;">
             <label>City</label>
-            <input type="text" class="form-control" name="city" placeholder="City">
+            <input type="text" class="form-control" value="{{employee.city}}" name="city" placeholder="City" required>
         </div>
     </div>
     <div class="form-group"  style="margin-top: 20px;">
         <label>Address</label>
-        <input type="text" class="form-control" name="address" placeholder="Address">
+        <input type="text" class="form-control" value="{{employee.address}}" name="address" placeholder="Address" required>
     </div>
     <div class="form-group" style="margin-top: 20px;">
         <label>Designation</label>
-        <input type="text" class="form-control" name="designation" placeholder="Designation">
+        <input type="text" class="form-control" value="{{employee.designation}}" name="designation" placeholder="Designation" required>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-info">
+    <div class="form-group" style="margin-top: 20px">
+        <button type="submit" class="btn btn-info" style="color: white">
             <i class="fa fa-database"></i>
             Submit
         </button>
+        <a href="employee/list">
+            <button type="button" class="btn btn-secondary" style="color: white">
+                <i class="fa fa-list"></i>
+                List
+            </button>
+        </a>
     </div>
+    
 </form>

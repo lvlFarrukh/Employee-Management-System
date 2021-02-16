@@ -4,13 +4,14 @@ const Schema = mongoose.Schema;
 const employeeSchema = new Schema({
     fullName: String,
     email: String,
-    mobileNumber: String,
+    number: String,
     city: String,
-    Address: String,
-    Status: String,
-    Designation: String
+    address: String,
+    designation: String,
+    status: Number,
+
 });
 
-mongoose.model('Employee', employeeSchema);
+const Employee = mongoose.model('Employee', employeeSchema);
 
-// module.exports = employee;
+module.exports = Employee;
